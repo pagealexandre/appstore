@@ -18,6 +18,7 @@ gem 'mini_racer', platforms: :ruby
 
 gem 'algoliasearch-rails'
 gem 'pg'
+gem 'figaro'
 
 group :production do
   gem 'rails_12factor'
