@@ -19,6 +19,8 @@ gem 'mini_racer', platforms: :ruby
 gem 'algoliasearch-rails'
 gem 'pg'
 gem 'figaro'
+gem 'bootstrap-sass', '~> 3.3.7'
+gem 'jquery-rails'
 
 group :production do
   gem 'rails_12factor'

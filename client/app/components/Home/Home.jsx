@@ -2,6 +2,8 @@ import React, { PropTypes } from 'react';
 
 import {Grid, Row, Col} from 'react-bootstrap';
 
+import AppForm from '../AppForm/Form.jsx';
+
 import './Home.scss';
 
 export default class Home extends React.Component {
@@ -28,6 +30,7 @@ export default class Home extends React.Component {
           <Col xs={6} xsOffset={3}>
             <h3>
               {this.state.title}!
+              <AppForm />
             </h3>
           </Col>
         </Row>
