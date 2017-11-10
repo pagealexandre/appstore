@@ -20,5 +20,10 @@
   "cacheDirectories": [
     "node_modules",
     "client/node_modules"
-  ]
+  ],
+  "dependencies": {
+    "i": "^0.3.6",
+    "npm": "^5.5.1",
+    "react-instantsearch": "^4.2.0"
+  }
 }

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root 'home#index'
+  get 'search', to: 'search#index'
+  
   namespace :api do
   	namespace :v1 do
     	resources :apps, only: [:edit, :create, :update, :destroy]
