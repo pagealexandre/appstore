@@ -1,0 +1,32 @@
+
+$searchBarHeight: 5vh;
+$columnOne: 100vh;
+$columnTwo: 100vh - $searchBarHeight;
+
+.custo {
+	background-color: red;
+}
+
+.custo2 {
+	background-color: blue;
+}
+
+.custo3 {
+	background-color: green;
+}
+
+.custo4 {
+	background-color: purple;
+}
+
+.full1 {
+	height: $columnOne;
+}
+
+.full2 {
+	height: $columnTwo;
+}
+
+.full3 {
+	height: $searchBarHeight;
+}

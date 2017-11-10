@@ -1,8 +1,12 @@
 import React, { PropTypes } from 'react';
 
 import { Grid, Row, Col } from 'react-bootstrap';
+
+import styles from './search.scss';
+
 import { 
   InstantSearch,
+  Configure,
   SearchBox,
   Hits,
   Highlight,
@@ -10,10 +14,10 @@ import {
   SortBy,
   Pagination,
   RefinementList,
-  Menu
 } from 'react-instantsearch/dom';
 
 import './style.scss';
+
 
 const Hit = ({hit}) =>
   <div className="hit">
@@ -69,7 +73,7 @@ export default class Search extends React.Component {
   /**
    * @param props - Comes from your rails view.
    * @param _railsContext - Comes from React on Rails
-   */
+   */ 
   constructor(props, _railsContext) {
     super(props);
 
@@ -80,21 +84,35 @@ export default class Search extends React.Component {
 
   render() {
     return (
-            <InstantSearch
-              appId="PYPITZ0454"
-              apiKey="e12b6940425d4aa3b0ebf8fefc4ccb09"
-              indexName="App_development"
-            >
-            <header className="header">
-               <SearchBox translations={{placeholder: 'Search for app'}} />
-            </header>
+      <Grid fluid={true}>
+       <InstantSearch
+          appId="PYPITZ0454"
+          apiKey="e12b6940425d4aa3b0ebf8fefc4ccb09"
+          indexName="App_development"
+        >
+          <Row className={styles.rowEqHeight}>
+              <Col sm={4} xsHidden className={styles.custo + ' ' + styles.full1}>
+                App Store
+                <Sidebar/>
+              </Col>
+              <Col sm={8} xs={12} className={styles.custo2}>
+                <Row>
+                  <Col sm={12} className={styles.custo3 + ' ' + styles.full3}>
+                    <SearchBox translations={{placeholder: 'Search for your app'}} />
+                  </Col>
+                  <Col sm={12} className={styles.custo4 + ' ' + styles.full2} >
+                    <Content/>
+                  </Col>
+                </Row>
+              </Col>
+          </Row>
 
-            <main>
-              <Sidebar/>
-              <Content/>
-            </main>
+        <Configure hitsPerPage={5} />
+        </InstantSearch>
 
-            </InstantSearch>
+      </Grid>
+
+
     );
   }
 }
