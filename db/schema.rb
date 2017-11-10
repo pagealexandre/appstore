@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20171108131936) do
     t.float    "rating"
     t.string   "link"
     t.string   "image"
-    t.text     "genres",     default: [],              array: true
+    t.string   "genres",     default: [],              array: true
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
   end

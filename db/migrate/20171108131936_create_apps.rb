@@ -6,7 +6,7 @@ class CreateApps < ActiveRecord::Migration
       t.float :rating
       t.string :link
       t.string :image
-      t.text :genres, array: true, default: []
+      t.string :genres, array: true, default: []
 
       t.timestamps null: false
     end
