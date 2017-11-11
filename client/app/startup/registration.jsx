@@ -1,8 +1,8 @@
 import ReactOnRails from 'react-on-rails';
 
-import Home from '../components/Home/Home.jsx';
-import Search from '../components/Search/Search.jsx';
+import BackOffice from '../components/BackOffice/BackOffice.jsx';
+import AppStore from '../components/AppStore/AppStore.jsx';
 
 ReactOnRails.register({
-  Home, Search,
+  AppStore, BackOffice
 });

@@ -5,7 +5,7 @@ import { Grid, Row, Col } from 'react-bootstrap';
 import Content from './Content.jsx';
 import Sidebar from '../Sidebar.jsx';
 
-import styles from './Search.scss';
+import styles from './AppStore.scss';
 import './Theme.scss';
 
 import { 
