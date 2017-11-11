@@ -10,13 +10,15 @@ import {
   Highlight,
 } from 'react-instantsearch/dom';
 
+import styles from './Content.scss';
+
 import Hit from './Hit.jsx';
 
 const Content = () => (
  <div className="content">
     <Row>
       <div className="info">
-        <Col sm={12}>
+        <Col sm={12} className={styles.stats}>
           <Stats/>
           <SortBy
             defaultRefinement="App_development"
@@ -30,7 +32,7 @@ const Content = () => (
       </div>
     </Row>
     <Row>
-      <Col xs={12}>
+      <Col xs={12} className={styles.marge}>
         <Hits hitComponent={Hit}/>
       </Col>
     </Row>

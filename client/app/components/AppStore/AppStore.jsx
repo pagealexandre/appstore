@@ -31,7 +31,7 @@ export default class AppStore extends React.Component {
           indexName="App_development"
         >
           <Row className="display-flex">
-                <Sidebar title={'AppStore'} linkTitle={'Add an App'} link={'/admin'}>                  
+                <Sidebar title={'AppStore'} linkTitle={'Add an App'} link={'/admin'}>
                   <Panel title="Genres">
                     <RefinementList attributeName="genres"/>
                   </Panel>
