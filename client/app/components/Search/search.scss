@@ -3,33 +3,78 @@ $searchBarHeight: 10vh;
 $columnOne: 100vh;
 $columnTwo: $columnOne - $searchBarHeight;
 
-.custo {
+.side {
 	background-color: #333333;
 	color: white;
+	min-height: $columnOne;
 }
 
-.custo2 {
-	background-color: blue;
-}
-
-.custo3 {
+.searchbox {
 	background-color: #f9f9fb;
-}
-
-.custo4 {
-	background-color: #f9f9fb;
-}
-
-.full1 {
-	height: $columnOne;
-}
-
-.full2 {
-	height: $columnTwo;
-}
-
-.full3 {
 	height: $searchBarHeight;
+}
+
+.app {
+	background-color: #f9f9fb;
+}
+
+.hit {
+	background-color: white;
+	box-shadow: 2px 2px 5px #888888;
+	margin-top: 30px;
+	max-height: 105px;
+	min-height: 105px;
+
+	:global(.hit-head) {
+		padding-top: 10px;
+	}
+
+	:global(.hit-image) {
+		float: left;
+		margin-left: 5px;
+
+		img {
+			 border-radius:50%;
+			 margin-right: 10px;
+		}
+	}
+
+	:global(.hit-name) {
+	    display: block;
+	    display: -webkit-box;
+	    max-width: 100px;
+	    /* max-height: 40px; */
+	    line-height: 1.4;
+	    -webkit-line-clamp: 3;
+	    -webkit-box-orient: vertical;
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+	}
+
+	:global(.hit-rating) {
+		float: left;
+	}
+
+	:global(.hit-price) {
+		float: right;
+		margin-right: 22px;
+	}
+
+}
+
+
+/*.full2 {
+	height: $columnTwo;
+}*/
+
+:global(.row.display-flex) {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+:global(.row.display-flex > [class*='col-']) {
+  display: flex;
+  flex-direction: column;
 }
 
 .sidebar {
@@ -46,11 +91,6 @@ $columnTwo: $columnOne - $searchBarHeight;
 
 :global(.ais-SearchBox__root) {
 	max-width: none !important;
-}
-
-:global(.pagination) {
-	position: absolute;
-	bottom: 0;
 }
 
 :global(.ais-SortBy__root) {

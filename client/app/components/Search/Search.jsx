@@ -39,23 +39,23 @@ export default class Search extends React.Component {
           apiKey="e12b6940425d4aa3b0ebf8fefc4ccb09"
           indexName="App_development"
         >
-          <Row className={styles.rowEqHeight}>
-              <Col sm={3} md={4} sm={5} xsHidden className={styles.custo + ' ' + styles.full1}>
+          <Row className="display-flex">
+              <Col sm={3} md={4} sm={5} xsHidden className={styles.side}>
                 <Sidebar/>
               </Col>
               <Col sm={9} md={8} sm={7} xs={12} className={styles.custo2}>
                 <Row>
-                  <Col sm={12} className={styles.custo3 + ' ' + styles.full3}>
+                  <Col sm={12} className={styles.searchbox}>
                     <SearchBox translations={{placeholder: 'Search for your app'}} />
                   </Col>
-                  <Col sm={12} className={styles.custo4 + ' ' + styles.full2} >
+                  <Col sm={12} className={styles.app} >
                     <Content/>
                   </Col>
                 </Row>
               </Col>
           </Row>
 
-        <Configure hitsPerPage={5} />
+        <Configure hitsPerPage={30} />
         </InstantSearch>
 
       </Grid>

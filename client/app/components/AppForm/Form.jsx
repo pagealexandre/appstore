@@ -13,7 +13,7 @@ function validate(appName, rating, price, selectedGenres, link, image) {
   var imageRegex = RegExp(/^(https?:\/\/.*\.(?:png|jpg))$/)
 
   return {
-    appName: appName.length === 0,
+    appName: appName.length === 0 || appName.length > 36,
     rating: rating < 0 || rating > 5 || rating === '',
     price: price < 0 || price === '',
     selectedGenres: selectedGenres.length === 0,
