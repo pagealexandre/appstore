@@ -2,7 +2,8 @@ import React, { PropTypes } from 'react';
 
 import {Grid, Row, Col} from 'react-bootstrap';
 
-import AppForm from '../AppForm/Form.jsx';
+import AppForm from '../AppForm/AppForm.jsx';
+import Sidebar from '../Sidebar.jsx';
 
 import './Home.scss';
 
@@ -26,11 +27,9 @@ export default class Home extends React.Component {
   render() {
     return (
       <Grid fluid={true}>
-        <Row>
-          <Col xs={4} className='menu'>
-            <h1>Add an Application to the Store</h1>
-            <a href='/search'><h1>Go to the AppStore</h1></a>
-          </Col>
+        <Row className="display-flex">
+          <Sidebar title={'Add an Application'} linkTitle={'AppStore'} link={'/search'}>
+          </Sidebar>
           <Col xs={6} xsOffset={1}>
               <AppForm />
           </Col>

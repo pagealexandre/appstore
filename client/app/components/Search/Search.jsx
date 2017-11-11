@@ -3,7 +3,7 @@ import React, { PropTypes } from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
 
 import Content from './Content.jsx';
-import Sidebar from './Sidebar.jsx';
+import Sidebar from '../Sidebar.jsx';
 
 import styles from './search.scss';
 
@@ -12,6 +12,7 @@ import {
   Configure,
   SearchBox,
   RefinementList,
+  Panel,
 } from 'react-instantsearch/dom';
 
 export default class Search extends React.Component {
@@ -40,21 +41,22 @@ export default class Search extends React.Component {
           indexName="App_development"
         >
           <Row className="display-flex">
-              <Col sm={3} md={4} sm={5} xsHidden className={styles.side}>
-                <Sidebar/>
-              </Col>
+                <Sidebar title={'AppStore'} linkTitle={'Add an App'} link={'/'}>                  
+                  <Panel title="Genres">
+                    <RefinementList attributeName="genres"/>
+                  </Panel>
+                </Sidebar>
               <Col sm={9} md={8} sm={7} xs={12} className={styles.custo2}>
                 <Row>
-                  <Col sm={12} className={styles.searchbox}>
+                  <Col sm={12} className={styles.grey}>
                     <SearchBox translations={{placeholder: 'Search for your app'}} />
                   </Col>
-                  <Col sm={12} className={styles.app} >
+                  <Col sm={12} className={styles.grey} >
                     <Content/>
                   </Col>
                 </Row>
               </Col>
           </Row> 
-        <Configure hitsPerPage={30} />
         </InstantSearch>
 
       </Grid>

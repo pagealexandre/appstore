@@ -5,22 +5,7 @@ import { Button } from 'react-bootstrap';
 import Checkbox from './Checkbox.jsx';
 import SingleInput from './SingleInput.jsx';
 
-import styles from './Form.scss';
-
-function validate(appName, rating, price, selectedGenres, link, image) {
-  // true means invalid, so our conditions got reversed
-  var Urlregex = RegExp(/^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/);
-  var imageRegex = RegExp(/^(https?:\/\/.*\.(?:png|jpg))$/)
-
-  return {
-    appName: appName.length === 0 || appName.length > 36,
-    rating: rating < 0 || rating > 5 || rating === '',
-    price: price < 0 || price === '',
-    selectedGenres: selectedGenres.length === 0,
-    link: !link.match(Urlregex),
-    image: !image.match(imageRegex),
-  };
-}
+import styles from './AppForm.scss';
 
 export default class AppForm extends React.Component {
 
@@ -42,6 +27,14 @@ export default class AppForm extends React.Component {
         link: false,
         image: false,
        },
+       errorMessage: {
+        appName: "Name's length must be inferior to 36 characters",
+        rating: "Rating must be bewteen 0 and 5",
+        price: 'price must be superior to 0',
+        link: 'You must provide a valid url',
+        image: 'You must provide a valid url containing an image',
+       }
+
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -92,6 +85,21 @@ export default class AppForm extends React.Component {
     });
   }
 
+  validate() {
+  
+    var Urlregex = RegExp(/^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/);
+    var imageRegex = RegExp(/^(https?:\/\/.*\.(?:png|jpg))$/)
+
+    return {
+      appName: this.state.appName.length === 0 || this.state.appName.length > 36,
+      rating: this.state.rating < 0 || this.state.rating > 5 || this.state.rating === '',
+      price: this.state.price < 0 || this.state.price === '',
+      selectedGenres: this.state.selectedGenres.length === 0,
+      link: !this.state.link.match(Urlregex),
+      image: !this.state.image.match(imageRegex),
+    };
+}
+
   handleSubmit(event) {
     event.preventDefault();
     fetch('/api/v1/apps', {
@@ -115,9 +123,7 @@ export default class AppForm extends React.Component {
   }
 
   render() {
-    const errors = validate(this.state.appName, this.state.rating,
-                            this.state.price, this.state.selectedGenres,
-                            this.state.link, this.state.image);
+    const errors = this.validate()
     const isDisabled = Object.keys(errors).some(x => errors[x]);
 
     const shouldMarkError = (field) => {
@@ -125,19 +131,31 @@ export default class AppForm extends React.Component {
       const shouldShow = this.state.touched[field];
 
       return hasError ? shouldShow : false;
+
     };
+
+    const displayError = (error) => {
+      return (
+        <div className="alert alert-warning">
+          <strong>Warning!</strong> {error}
+        </div>
+      );
+    };    
 
     return (
       <form onSubmit={this.handleSubmit}>
         <SingleInput inputType={'text'} title={'Name:'} name={shouldMarkError('appName') ? styles.error : ''}  content={this.state.appName} 
         controlFunc={this.handleNameChange} onBlurFunc={this.handleBlur('appName')}/>
+        { shouldMarkError('appName') ? displayError(this.state.errorMessage.appName) : ''}
 
         <SingleInput inputType={'number'} title={'Rating:'} name={shouldMarkError('rating') ? styles.error : ''} content={this.state.rating}
-         controlFunc={this.handleRatingChange} onBlurFunc={this.handleBlur('rating')} />
+         controlFunc={this.handleRatingChange} onBlurFunc={this.handleBlur('rating')} /> 
+         { shouldMarkError('rating') ? displayError(this.state.ratingError) : ''}
 
 
         <SingleInput inputType={'number'} title={'Pricing:'} name={shouldMarkError('price') ? styles.error : ''} content={this.state.price}
          controlFunc={this.handlePriceChange} onBlurFunc={this.handleBlur('price')}/>
+         { shouldMarkError('price') ? displayError(this.state.errorMessage.price) : ''}
       
         <Checkbox title={'Genres: '} setName={errors.selectedGenres ? styles.error : ''}  type={'checkbox'} 
         controlFunc={this.handleGenreSelection} onBlurFunc={this.handleBlur('appName')} options={this.state.genres}
@@ -145,9 +163,11 @@ export default class AppForm extends React.Component {
 
         <SingleInput inputType={'text'} title={'Link:'} name={shouldMarkError('link') ? styles.error : ''} content={this.state.link}
          controlFunc={this.handleLinkChange} onBlurFunc={this.handleBlur('link')} />
+         { shouldMarkError('link') ? displayError(this.state.errorMessage.link) : ''}
 
         <SingleInput inputType={'text'} title={'Image:'} name={shouldMarkError('image') ? styles.error : ''} content={this.state.image}
          controlFunc={this.handleImageChange} onBlurFunc={this.handleBlur('image')}/>
+         { shouldMarkError('link') ? displayError(this.state.errorMessage.image) : ''}
 
         <Button bsStyle="primary" disabled={isDisabled} type="submit">Submit</Button>
 
