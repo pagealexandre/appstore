@@ -17,7 +17,7 @@ export default class BackOffice extends React.Component {
     return (
       <Grid fluid={true}>
         <Row className={"display-flex " + styles.grey} >
-          <Sidebar title={'Add an Application'} linkTitle={'AppStore'} link={'/search'}></Sidebar>
+          <Sidebar title={'Add an Application'} linkTitle={'AppStore'} link={'/'}></Sidebar>
           <Col xs={6} xsOffset={1}>
               <AppForm />
           </Col>

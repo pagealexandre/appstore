@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  root 'home#index'
-  get 'search', to: 'search#index'
+  root 'store#index'
+  get 'admin', to: 'admin#index'
   
   namespace :api do
   	namespace :v1 do

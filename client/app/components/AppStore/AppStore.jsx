@@ -16,21 +16,10 @@ import {
   Panel,
 } from 'react-instantsearch/dom';
 
-export default class Search extends React.Component {
-  static propTypes = {
-    title: PropTypes.string.isRequired, // this is passed from the Rails view
-  };
+export default class AppStore extends React.Component {
 
-  /**
-   * @param props - Comes from your rails view.
-   * @param _railsContext - Comes from React on Rails
-   */ 
   constructor(props, _railsContext) {
     super(props);
-
-    // How to set initial state in ES6 class syntax
-    // https://facebook.github.io/react/docs/reusable-components.html#es6-classes
-    this.state = { title: this.props.title };
   }
 
   render() {
@@ -42,7 +31,7 @@ export default class Search extends React.Component {
           indexName="App_development"
         >
           <Row className="display-flex">
-                <Sidebar title={'AppStore'} linkTitle={'Add an App'} link={'/'}>                  
+                <Sidebar title={'AppStore'} linkTitle={'Add an App'} link={'/admin'}>                  
                   <Panel title="Genres">
                     <RefinementList attributeName="genres"/>
                   </Panel>
