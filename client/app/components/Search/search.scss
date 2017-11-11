@@ -1,10 +1,11 @@
 
-$searchBarHeight: 5vh;
+$searchBarHeight: 10vh;
 $columnOne: 100vh;
-$columnTwo: 100vh - $searchBarHeight;
+$columnTwo: $columnOne - $searchBarHeight;
 
 .custo {
-	background-color: red;
+	background-color: #333333;
+	color: white;
 }
 
 .custo2 {
@@ -12,11 +13,11 @@ $columnTwo: 100vh - $searchBarHeight;
 }
 
 .custo3 {
-	background-color: green;
+	background-color: #f9f9fb;
 }
 
 .custo4 {
-	background-color: purple;
+	background-color: #f9f9fb;
 }
 
 .full1 {
@@ -29,4 +30,59 @@ $columnTwo: 100vh - $searchBarHeight;
 
 .full3 {
 	height: $searchBarHeight;
+}
+
+.sidebar {
+	h1 {
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+		text-align: center;
+		font-size: 50px;
+	}
+
+	h5 {
+		font-size: 30px;
+	}
+}
+
+:global(.ais-SearchBox__root) {
+	max-width: none !important;
+}
+
+:global(.pagination) {
+	position: absolute;
+	bottom: 0;
+}
+
+:global(.ais-SortBy__root) {
+	float: right;
+}
+
+:global(.ais-Panel__root) {
+	margin-top: 50px;
+}
+
+:global(.ais-InstantSearch__root) {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+	form {
+		height: 90%;
+		font-size: 25px;
+	}
+
+	:global(.ais-SearchBox__submit) {
+	 	svg {
+	 		width: 25px;
+	 		height: 25px;
+	 	}
+	}
+}
+
+:global(.ais-RefinementList__item) {
+	label {
+			font-size: 20px;
+			color: #f9f9fb;
+	}
+	:global(.ais-RefinementList__itemCount) {
+		color: #f9f9fb;
+		background-color: #3369e7;
+	}
 }

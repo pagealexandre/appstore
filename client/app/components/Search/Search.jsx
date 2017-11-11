@@ -2,68 +2,17 @@ import React, { PropTypes } from 'react';
 
 import { Grid, Row, Col } from 'react-bootstrap';
 
+import Content from './Content.jsx';
+import Sidebar from './Sidebar.jsx';
+
 import styles from './search.scss';
 
 import { 
   InstantSearch,
   Configure,
   SearchBox,
-  Hits,
-  Highlight,
-  Stats,
-  SortBy,
-  Pagination,
   RefinementList,
 } from 'react-instantsearch/dom';
-
-import './style.scss';
-
-
-const Hit = ({hit}) =>
-  <div className="hit">
-    <div className="hit-image">
-      <img src={hit.image}/>
-    </div>
-    <div className="hit-content">
-      <div className="hit-price">
-        ${hit.price}
-      </div>
-    </div>
-    <div className="hit-content">
-      <div className="hit-rating">
-        {hit.rating}/5
-      </div>
-    </div>    
-    <div className="hit-name">
-      <Highlight attributeName="name" hit={hit}/>
-    </div>
-  </div>
-
-
-const Sidebar = () => 
-  <div className="sidebar">
-    <h5>Genres</h5>
-    <RefinementList attributeName="genres" withSearchBox/>
-  </div>
-
-const Content = () =>
- <div className="content">
-    <div className="info">
-      <Stats/>
-      <SortBy
-        defaultRefinement="App_development"
-        items={[
-            {value: 'App_development', label: 'Most relevant'},
-            {value: 'App_development_price_asc', label: 'Lowest Price'},
-            {value: 'App_development_price_desc', label: 'Highest Price'}
-        ]}
-      />
-    </div>
-    <Hits hitComponent={Hit}/>
-    <div className="pagination">
-      <Pagination showLast/>
-    </div>
- </div>
 
 export default class Search extends React.Component {
   static propTypes = {
@@ -91,11 +40,10 @@ export default class Search extends React.Component {
           indexName="App_development"
         >
           <Row className={styles.rowEqHeight}>
-              <Col sm={4} xsHidden className={styles.custo + ' ' + styles.full1}>
-                App Store
+              <Col sm={3} md={4} sm={5} xsHidden className={styles.custo + ' ' + styles.full1}>
                 <Sidebar/>
               </Col>
-              <Col sm={8} xs={12} className={styles.custo2}>
+              <Col sm={9} md={8} sm={7} xs={12} className={styles.custo2}>
                 <Row>
                   <Col sm={12} className={styles.custo3 + ' ' + styles.full3}>
                     <SearchBox translations={{placeholder: 'Search for your app'}} />
