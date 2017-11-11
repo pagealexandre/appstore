@@ -29,7 +29,7 @@ export default class Home extends React.Component {
         <Row>
           <Col xs={6} xsOffset={3}>
             <h3>
-              {this.state.title}!
+              {this.state.title}
               <AppForm />
             </h3>
           </Col>

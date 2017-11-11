@@ -5,7 +5,7 @@ import { Button } from 'react-bootstrap';
 import Checkbox from './Checkbox.jsx';
 import SingleInput from './SingleInput.jsx';
 
-import { error } from './Form.scss';
+import styles from './Form.scss';
 
 function validate(appName, rating, price, selectedGenres, link, image) {
   // true means invalid, so our conditions got reversed
@@ -42,7 +42,7 @@ export default class AppForm extends React.Component {
        rating: '',
        price: '',
        genres: ['Utilities', 'Entertainment', 'Arcade', 'Puzzle', 'Games', 'Action'],
-       selectedGenres: ['Arcade'],
+       selectedGenres: ['Utilities'],
        link: '',
        image: '',
        touched: {
@@ -139,24 +139,24 @@ export default class AppForm extends React.Component {
 
     return (
       <form onSubmit={this.handleSubmit}>
-        <SingleInput inputType={'text'} title={'Name:'} name={shouldMarkError('appName') ? error : ''}  content={this.state.appName} 
+        <SingleInput inputType={'text'} title={'Name:'} name={shouldMarkError('appName') ? styles.error : ''}  content={this.state.appName} 
         controlFunc={this.handleNameChange} onBlurFunc={this.handleBlur('appName')}/>
 
-        <SingleInput inputType={'number'} title={'Rating:'} name={shouldMarkError('rating') ? error : ''} content={this.state.rating}
+        <SingleInput inputType={'number'} title={'Rating:'} name={shouldMarkError('rating') ? styles.error : ''} content={this.state.rating}
          controlFunc={this.handleRatingChange} onBlurFunc={this.handleBlur('rating')} />
 
 
-        <SingleInput inputType={'number'} title={'Pricing:'} name={shouldMarkError('price') ? error : ''} content={this.state.price}
+        <SingleInput inputType={'number'} title={'Pricing:'} name={shouldMarkError('price') ? styles.error : ''} content={this.state.price}
          controlFunc={this.handlePriceChange} onBlurFunc={this.handleBlur('price')}/>
       
-        <Checkbox title={'Genres: '} setName={errors.selectedGenres ? 'error' : ''}  type={'checkbox'} 
-        controlFunc={this.handleGenreSelection} onBlurFunc={this.handleBlur('appName')} options={this.state.genres} 
-        selectedOptions={this.state.selectedGenres} />
+        <Checkbox title={'Genres: '} setName={errors.selectedGenres ? styles.error : ''}  type={'checkbox'} 
+        controlFunc={this.handleGenreSelection} onBlurFunc={this.handleBlur('appName')} options={this.state.genres}
+        selectedOptions={this.state.selectedGenres} /><br />
 
-        <SingleInput inputType={'text'} title={'Link:'} name={shouldMarkError('link') ? error : ''} content={this.state.link}
+        <SingleInput inputType={'text'} title={'Link:'} name={shouldMarkError('link') ? styles.error : ''} content={this.state.link}
          controlFunc={this.handleLinkChange} onBlurFunc={this.handleBlur('link')} />
 
-        <SingleInput inputType={'text'} title={'Image:'} name={shouldMarkError('image') ? error : ''} content={this.state.image}
+        <SingleInput inputType={'text'} title={'Image:'} name={shouldMarkError('image') ? styles.error : ''} content={this.state.image}
          controlFunc={this.handleImageChange} onBlurFunc={this.handleBlur('image')}/>
 
         <Button bsStyle="primary" disabled={isDisabled} type="submit">Submit</Button>

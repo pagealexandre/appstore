@@ -53,8 +53,7 @@ export default class Search extends React.Component {
                   </Col>
                 </Row>
               </Col>
-          </Row>
-
+          </Row> 
         <Configure hitsPerPage={30} />
         </InstantSearch>
 
