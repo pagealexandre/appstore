@@ -41,7 +41,6 @@ $columnTwo: $columnOne - $searchBarHeight;
 	    display: block;
 	    display: -webkit-box;
 	    max-width: 100px;
-	    /* max-height: 40px; */
 	    line-height: 1.4;
 	    -webkit-line-clamp: 3;
 	    -webkit-box-orient: vertical;
@@ -59,11 +58,6 @@ $columnTwo: $columnOne - $searchBarHeight;
 	}
 
 }
-
-
-/*.full2 {
-	height: $columnTwo;
-}*/
 
 :global(.row.display-flex) {
   display: flex;

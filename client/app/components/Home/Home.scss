@@ -5,4 +5,8 @@ h3 {
   color: $mainColor;
 }
 
-
+:global(.menu) {
+	background-color: #333333;
+	min-height: 100vh;
+	color: white;
+}

@@ -9,7 +9,7 @@ import styles from './search.scss';
 
 const Sidebar = () => (
   <div className={styles.sidebar}>
-  	<h1>App Store</h1>
+  	<h1>AppStore</h1>
     <Panel title="Genres">
     	<RefinementList attributeName="genres"/>
     </Panel>

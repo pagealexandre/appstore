@@ -27,16 +27,6 @@ export default class AppForm extends React.Component {
   constructor(props, _railsContext) {
     super(props);
 
-    // Testing purpose
-    // this.state = {
-    //    appName: 'Candy Crush',
-    //    rating: 1.99,
-    //    price: 4.5,
-    //    genres: ['Utilities', 'Entertainment', 'Arcade', 'Puzzle', 'Games', 'Action'],
-    //    selectedGenres: ['Arcade'],
-    //    link: 'http://kent.ac.uk',
-    //    image: 'http://kent.ac.uk/image.jpg',
-    // };
     this.state = {
        appName: '',
        rating: '',

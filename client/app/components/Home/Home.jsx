@@ -25,13 +25,14 @@ export default class Home extends React.Component {
 
   render() {
     return (
-      <Grid>
+      <Grid fluid={true}>
         <Row>
-          <Col xs={6} xsOffset={3}>
-            <h3>
-              {this.state.title}
+          <Col xs={4} className='menu'>
+            <h1>Add an Application to the Store</h1>
+            <a href='/search'><h1>Go to the AppStore</h1></a>
+          </Col>
+          <Col xs={6} xsOffset={1}>
               <AppForm />
-            </h3>
           </Col>
         </Row>
       </Grid>
