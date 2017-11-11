@@ -1,0 +1,54 @@
+:global(.row.display-flex > [class*='col-']) {
+  display: flex;
+  flex-direction: column;
+}
+
+:global(.ais-SearchBox__root) {
+	max-width: none !important;
+}
+
+:global(.ais-SortBy__root) {
+	float: right;
+}
+
+:global(.ais-Panel__root) {
+	margin-top: 50px;
+}
+
+:global(.ais-InstantSearch__root) {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+	form {
+		height: 80%;
+		font-size: 25px;
+	}
+
+	:global(.ais-SearchBox__submit) {
+	 	svg {
+	 		width: 25px;
+	 		height: 25px;
+	 	}
+	}
+}
+
+:global(.ais-RefinementList__item) {
+	label {
+			font-size: 20px;
+			color: #f9f9fb;
+	}
+	:global(.ais-RefinementList__itemCount) {
+		color: #f9f9fb;
+		background-color: #3369e7;
+	}
+}
+
+:global(.ais-InstantSearch__root) {
+	form {
+	    height: $searchBarHeight !important;
+	    margin-top: 1%;
+	}
+}
+
+:global(.row.display-flex) {
+  display: flex;
+  flex-wrap: wrap;
+}

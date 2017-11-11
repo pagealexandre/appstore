@@ -5,7 +5,7 @@ import {Grid, Row, Col} from 'react-bootstrap';
 import AppForm from '../AppForm/AppForm.jsx';
 import Sidebar from '../Sidebar.jsx';
 
-import './Home.scss';
+import styles from './Home.scss';
 
 export default class Home extends React.Component {
   static propTypes = {
@@ -27,7 +27,7 @@ export default class Home extends React.Component {
   render() {
     return (
       <Grid fluid={true}>
-        <Row className="display-flex">
+        <Row className={"display-flex " + styles.grey} >
           <Sidebar title={'Add an Application'} linkTitle={'AppStore'} link={'/search'}>
           </Sidebar>
           <Col xs={6} xsOffset={1}>
