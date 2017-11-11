@@ -23,6 +23,7 @@ export default class AppForm extends React.Component {
        touched: {
         appName: false,
         rating: false,
+        selectedGenres: false,
         price: false,
         link: false,
         image: false,
@@ -32,6 +33,7 @@ export default class AppForm extends React.Component {
         rating: "Rating must be bewteen 0 and 5",
         price: 'price must be superior to 0',
         link: 'You must provide a valid url',
+        selectedGenres: 'You must at least select one object',
         image: 'You must provide a valid url containing an image',
        }
 
@@ -76,7 +78,7 @@ export default class AppForm extends React.Component {
       newSelectionArray = [...this.state.selectedGenres, newSelection];
     }
 
-    this.setState({ selectedGenres: newSelectionArray });
+    this.setState({ selectedGenres: newSelectionArray, touched: { selectedGenres: true } });
   }
 
   handleBlur = (field) => (evt) => {
@@ -130,6 +132,7 @@ export default class AppForm extends React.Component {
       const hasError = errors[field];
       const shouldShow = this.state.touched[field];
 
+      console.log(this.state.touched['selectedGenres']);
       return hasError ? shouldShow : false;
 
     };
@@ -140,34 +143,36 @@ export default class AppForm extends React.Component {
           <strong>Warning!</strong> {error}
         </div>
       );
-    };    
+    };
 
     return (
-      <form onSubmit={this.handleSubmit}>
-        <SingleInput inputType={'text'} title={'Name:'} name={shouldMarkError('appName') ? styles.error : ''}  content={this.state.appName} 
-        controlFunc={this.handleNameChange} onBlurFunc={this.handleBlur('appName')}/>
+      <form className={styles.appForm} onSubmit={this.handleSubmit}>
+        <SingleInput inputType={'text'} title={'Name:'} content={this.state.appName}  controlFunc={this.handleNameChange} 
+        onBlurFunc={this.handleBlur('appName')}/> 
         { shouldMarkError('appName') ? displayError(this.state.errorMessage.appName) : ''}
 
-        <SingleInput inputType={'number'} title={'Rating:'} name={shouldMarkError('rating') ? styles.error : ''} content={this.state.rating}
-         controlFunc={this.handleRatingChange} onBlurFunc={this.handleBlur('rating')} /> 
-         { shouldMarkError('rating') ? displayError(this.state.ratingError) : ''}
+        <SingleInput inputType={'number'} title={'Rating:'} content={this.state.rating} controlFunc={this.handleRatingChange}
+         onBlurFunc={this.handleBlur('rating')} />
+        { shouldMarkError('rating') ? displayError(this.state.errorMessage.rating) : ''}
 
 
-        <SingleInput inputType={'number'} title={'Pricing:'} name={shouldMarkError('price') ? styles.error : ''} content={this.state.price}
-         controlFunc={this.handlePriceChange} onBlurFunc={this.handleBlur('price')}/>
-         { shouldMarkError('price') ? displayError(this.state.errorMessage.price) : ''}
+        <SingleInput inputType={'number'} title={'Pricing:'} content={this.state.price} controlFunc={this.handlePriceChange}
+         onBlurFunc={this.handleBlur('price')}/> 
+        { shouldMarkError('price') ? displayError(this.state.errorMessage.price) : ''}
       
         <Checkbox title={'Genres: '} setName={errors.selectedGenres ? styles.error : ''}  type={'checkbox'} 
-        controlFunc={this.handleGenreSelection} onBlurFunc={this.handleBlur('appName')} options={this.state.genres}
+        controlFunc={this.handleGenreSelection} options={this.state.genres}
         selectedOptions={this.state.selectedGenres} /><br />
 
-        <SingleInput inputType={'text'} title={'Link:'} name={shouldMarkError('link') ? styles.error : ''} content={this.state.link}
-         controlFunc={this.handleLinkChange} onBlurFunc={this.handleBlur('link')} />
-         { shouldMarkError('link') ? displayError(this.state.errorMessage.link) : ''}
+        { shouldMarkError('selectedGenres') ? displayError(this.state.errorMessage.selectedGenres) : ''}
 
-        <SingleInput inputType={'text'} title={'Image:'} name={shouldMarkError('image') ? styles.error : ''} content={this.state.image}
-         controlFunc={this.handleImageChange} onBlurFunc={this.handleBlur('image')}/>
-         { shouldMarkError('link') ? displayError(this.state.errorMessage.image) : ''}
+        <SingleInput inputType={'text'} title={'Link:'} content={this.state.link} controlFunc={this.handleLinkChange}
+         onBlurFunc={this.handleBlur('link')} />
+        { shouldMarkError('link') ? displayError(this.state.errorMessage.link) : ''}
+
+        <SingleInput inputType={'text'} title={'Image:'} content={this.state.image} controlFunc={this.handleImageChange}
+         onBlurFunc={this.handleBlur('image')}/>
+        { shouldMarkError('link') ? displayError(this.state.errorMessage.image) : ''}
 
         <Button bsStyle="primary" disabled={isDisabled} type="submit">Submit</Button>
 

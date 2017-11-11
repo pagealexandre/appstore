@@ -14,7 +14,7 @@ const Sidebar = (props) => (
 	  <div className={styles.sidebar}>
 	  	<h1>{props.title}</h1>
 	  	{props.children}
-	  	<a className={styles.link} href={props.link}><h1>{props.linkTitle}</h1></a>
+	  	<a className={styles.link} href={props.link}><h2>{props.linkTitle}</h2></a>
 	  </div>
 	</Col>
 );

@@ -28,7 +28,7 @@ Checkbox.propTypes = {
   setName: React.PropTypes.string.isRequired,
   options: React.PropTypes.array.isRequired,
   selectedOptions: React.PropTypes.array,
-  controlFunc: React.PropTypes.func.isRequired
+  controlFunc: React.PropTypes.func.isRequired,
 };
 
 export default Checkbox; 

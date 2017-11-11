@@ -5,7 +5,7 @@ const SingleInput = (props) => (
     <label className="form-label">{props.title}</label>
     <input
       onBlur={props.onBlurFunc}
-      className={"form-input " + props.name}
+      className="form-input"
       type={props.inputType}
       value={props.content}
       onChange={props.controlFunc} />
@@ -15,12 +15,12 @@ const SingleInput = (props) => (
 SingleInput.propTypes = {  
   inputType: React.PropTypes.oneOf(['text', 'number']).isRequired,
   title: React.PropTypes.string.isRequired,
-  name: React.PropTypes.string.isRequired,
   controlFunc: React.PropTypes.func.isRequired,
   content: React.PropTypes.oneOfType([
     React.PropTypes.string,
     React.PropTypes.number,
   ]).isRequired,
+  onBlurFunc: React.PropTypes.func.isRequired,
 };
 
 export default SingleInput;  
