@@ -14,18 +14,18 @@ import styles from '../../assets/styles/components/Content.scss';
 
 import Hit from './Hit.jsx';
 
-const Content = () => (
+const Content = (props) => (
  <div className={styles.content}>
     <Row>
       <div className="info">
         <Col sm={12} className={styles.stats}>
           <Stats/>
           <SortBy
-            defaultRefinement="App_development"
+            defaultRefinement={"App_" + props.env}
             items={[
-                {value: 'App_development', label: 'Most relevant'},
-                {value: 'App_development_price_asc', label: 'Lowest Price'},
-                {value: 'App_development_price_desc', label: 'Highest Price'}
+                {value: 'App_' + props.env, label: 'Most relevant'},
+                {value: 'App_price_asc_' + props.env, label: 'Lowest Price'},
+                {value: 'App_price_desc_' + props.env, label: 'Highest Price'}
             ]}
           />
         </Col>

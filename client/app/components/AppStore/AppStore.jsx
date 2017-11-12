@@ -18,17 +18,28 @@ import {
 
 export default class AppStore extends React.Component {
 
+  static propTypes = {
+    appId: PropTypes.string.isRequired, // this is passed from the Rails view
+    searchOnlyApiKey: PropTypes.string.isRequired,
+    env: PropTypes.string.isRequired
+  };
+
   constructor(props, _railsContext) {
     super(props);
+    this.state = {
+      appId: props.appId,
+      searchOnlyApiKey: props.searchOnlyApiKey,
+      rubyEnv: props.env
+    }
   }
 
   render() {
     return (
       <Grid fluid={true}>
        <InstantSearch
-          appId="PYPITZ0454"
-          apiKey="e12b6940425d4aa3b0ebf8fefc4ccb09"
-          indexName="App_development"
+          appId={this.state.appId}
+          apiKey={this.state.searchOnlyApiKey}
+          indexName={"App_" + this.state.rubyEnv}
         >
           <Row className="display-flex">
               <Sidebar title={'AppStore'} linkTitle={'Add an App'} link={'/admin'}>
@@ -42,7 +53,7 @@ export default class AppStore extends React.Component {
                     <SearchBox translations={{placeholder: 'Search for your app'}} />
                   </Col>
                   <Col sm={12}>
-                    <Content/>
+                    <Content env={this.state.rubyEnv}/>
                   </Col>
                 </Row>
               </Col>
