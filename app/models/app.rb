@@ -8,7 +8,7 @@ class App < ActiveRecord::Base
 
     	attributesForFaceting [:genres]
 
-	    add_replica 'App_price_asc', inherit: true, per_environment: true do
+	    add_replica 'App_price_asc', per_environment: true do
 	      customRanking ['asc(price)']
 	    end
 
