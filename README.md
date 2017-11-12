@@ -4,6 +4,7 @@ All the tasks asked in [this](https://gist.github.com/Jerskouille/553717eb770be0
 
 # How to test it ?
 
+`bundle install`
 `npm install`
 
 `be = bundle exec`
