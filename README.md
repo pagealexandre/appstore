@@ -12,3 +12,5 @@ All the tasks asked in [this](https://gist.github.com/Jerskouille/553717eb770be0
 `be rake db:migrate`
 `be rake db:seed`
 
+`foreman start -f Procfile.hot`
+
