@@ -28,8 +28,8 @@ I use the gem figaro
 
 `be rake db:migrate`
 
-`be rake db:seed`
+`be rake db:seed` (This might take some time)
 
 `foreman start -f Procfile.hot`
 
-All the tasks asked in [this](https://gist.github.com/Jerskouille/553717eb770be0a2665be8b8a20ed6e7) has been implemented
+All the tasks asked in [this assessment](https://gist.github.com/Jerskouille/553717eb770be0a2665be8b8a20ed6e7) has been implemented
