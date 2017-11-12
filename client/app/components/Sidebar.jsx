@@ -7,7 +7,7 @@ import {
 
 import { Col } from 'react-bootstrap';
 
-import styles from './Sidebar.scss';
+import styles from '../assets/styles/components/Sidebar.scss';
 
 const Sidebar = (props) => (
 	<Col sm={3} md={4} sm={5} xsHidden className={styles.side}>

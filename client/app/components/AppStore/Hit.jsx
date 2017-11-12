@@ -2,9 +2,9 @@ import React from 'react';
 
 import { Row, Col } from 'react-bootstrap';
 
-import styles from './Hit.scss';
-
 import { Highlight } from 'react-instantsearch/dom';
+
+import styles from '../../assets/styles/components/Hit.scss';
 
 import ButtonAppRemove from './ButtonAppRemove.jsx';
 

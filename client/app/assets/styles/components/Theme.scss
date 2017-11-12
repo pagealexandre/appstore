@@ -1,3 +1,7 @@
+body, html {
+	background-color: #f9f9fb
+}
+
 :global(.row.display-flex > [class*='col-']) {
   display: -webkit-flex;
   display: flex;

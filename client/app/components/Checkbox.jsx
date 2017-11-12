@@ -1,7 +1,5 @@
 import React from 'react';
 
-import styles from './AppForm.jsx';
-
 const Checkbox = (props) => (  
   <div className="form-checkbox-label">
     <label id="title">{props.title}</label>

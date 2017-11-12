@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-import styles from './ButtonAppRemove.scss';
+import styles from '../../assets/styles/components/ButtonAppRemove.scss';
 
 export default class ButtonAppRemove extends React.Component {
 

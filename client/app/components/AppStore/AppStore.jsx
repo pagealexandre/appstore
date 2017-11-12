@@ -5,8 +5,8 @@ import { Grid, Row, Col } from 'react-bootstrap';
 import Content from './Content.jsx';
 import Sidebar from '../Sidebar.jsx';
 
-import styles from './AppStore.scss';
-import './Theme.scss';
+import styles from '../../assets/styles/components/AppStore.scss';
+import '../../assets/styles/components/Theme.scss';
 
 import { 
   InstantSearch,

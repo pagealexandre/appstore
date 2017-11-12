@@ -2,10 +2,10 @@ import React, { PropTypes } from 'react';
 
 import { Button } from 'react-bootstrap';
 
-import Checkbox from './Checkbox.jsx';
-import SingleInput from './SingleInput.jsx';
+import Checkbox from '../Checkbox.jsx';
+import SingleInput from '../SingleInput.jsx';
 
-import styles from './AppForm.scss';
+import styles from '../../assets/styles/components/AppForm.scss';
 
 export default class AppForm extends React.Component {
 
@@ -20,6 +20,7 @@ export default class AppForm extends React.Component {
        selectedGenres: ['Utilities'],
        link: '',
        image: '',
+       itemAdded: false,
        touched: {
         appName: false,
         rating: false,
@@ -28,6 +29,7 @@ export default class AppForm extends React.Component {
         link: false,
         image: false,
        },
+
        errorMessage: {
         appName: "Name's length must be inferior to 36 characters",
         rating: "Rating must be bewteen 0 and 5",
@@ -100,7 +102,7 @@ export default class AppForm extends React.Component {
       link: !this.state.link.match(Urlregex),
       image: !this.state.image.match(imageRegex),
     };
-}
+  }
 
   handleSubmit(event) {
     event.preventDefault();
@@ -120,7 +122,11 @@ export default class AppForm extends React.Component {
       })
     }).then(function(response){
       console.log(response);
-    })
+    });
+
+    this.setState({
+      itemAdded: true
+    });
 
   }
 
@@ -132,7 +138,6 @@ export default class AppForm extends React.Component {
       const hasError = errors[field];
       const shouldShow = this.state.touched[field];
 
-      console.log(this.state.touched['selectedGenres']);
       return hasError ? shouldShow : false;
 
     };
@@ -141,6 +146,14 @@ export default class AppForm extends React.Component {
       return (
         <div className="alert alert-warning">
           <strong>Warning!</strong> {error}
+        </div>
+      );
+    };
+
+    const displaySuccessfullyAdded = () => {
+      return (
+        <div className={styles.success + ' alert alert-success'}>
+          <p>Your app has been added to the store!</p>
         </div>
       );
     };
@@ -175,6 +188,8 @@ export default class AppForm extends React.Component {
         { shouldMarkError('link') ? displayError(this.state.errorMessage.image) : ''}
 
         <Button bsStyle="primary" disabled={isDisabled} type="submit">Submit</Button>
+
+        {this.state.itemAdded ? displaySuccessfullyAdded() : '' }
 
       </form>
     );

@@ -2,12 +2,12 @@ class Api::V1::AppsController < ApplicationController
 	before_action :set_app, only: [:update, :destroy]
 
 	def create
-		@app = App.create(app_params)
+		@app = App.create!(app_params)
 		render json: @app
 	end
 
 	def update
-		@app.update(app_params)
+		@app.update!(app_params)
 		render json: @app
 	end
 

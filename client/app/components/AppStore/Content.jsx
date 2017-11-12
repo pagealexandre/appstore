@@ -10,12 +10,12 @@ import {
   Highlight,
 } from 'react-instantsearch/dom';
 
-import styles from './Content.scss';
+import styles from '../../assets/styles/components/Content.scss';
 
 import Hit from './Hit.jsx';
 
 const Content = () => (
- <div className="content">
+ <div className={styles.content}>
     <Row>
       <div className="info">
         <Col sm={12} className={styles.stats}>

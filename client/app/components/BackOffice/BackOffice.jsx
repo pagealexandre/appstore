@@ -2,10 +2,10 @@ import React, { PropTypes } from 'react';
 
 import {Grid, Row, Col} from 'react-bootstrap';
 
-import AppForm from '../AppForm/AppForm.jsx';
+import AppForm from './AppForm.jsx';
 import Sidebar from '../Sidebar.jsx';
 
-import styles from './BackOffice.scss';
+import styles from '../../assets/styles/components/BackOffice.scss';
 
 export default class BackOffice extends React.Component {
 
