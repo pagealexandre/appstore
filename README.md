@@ -4,7 +4,7 @@
 
 # How to test it ?
 
-You might want to use a docker container as I change the DB from Sqlite to Postresql
+You want to use a docker container as I change the DB from Sqlite to Postresql
 
 I use the gem figaro
 
