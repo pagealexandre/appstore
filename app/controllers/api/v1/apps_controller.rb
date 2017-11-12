@@ -12,7 +12,7 @@ class Api::V1::AppsController < ApplicationController
 	end
 
 	def destroy
-		@app.destroy
+		@app.destroy!
 		render :json => { :message => "Done" }, status: :ok
 	end
 
