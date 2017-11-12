@@ -10,10 +10,10 @@ import './Theme.scss';
 
 import { 
   InstantSearch,
-  Configure,
   SearchBox,
   RefinementList,
   Panel,
+  Configure,
 } from 'react-instantsearch/dom';
 
 export default class AppStore extends React.Component {
@@ -31,26 +31,26 @@ export default class AppStore extends React.Component {
           indexName="App_development"
         >
           <Row className="display-flex">
-                <Sidebar title={'AppStore'} linkTitle={'Add an App'} link={'/admin'}>
-                  <Panel title="Genres">
-                    <RefinementList attributeName="genres"/>
-                  </Panel>
-                </Sidebar>
-              <Col sm={9} md={8} sm={7} xs={12} className={styles.custo2}>
-                <Row>
-                  <Col sm={12} className={styles.grey}>
+              <Sidebar title={'AppStore'} linkTitle={'Add an App'} link={'/admin'}>
+                <Panel title="Genres">
+                  <RefinementList attributeName="genres"/>
+                </Panel>
+              </Sidebar>
+              <Col sm={9} md={8} sm={7} xs={12}>
+                <Row className={styles.grey} >
+                  <Col sm={12}>
                     <SearchBox translations={{placeholder: 'Search for your app'}} />
                   </Col>
-                  <Col sm={12} className={styles.grey} >
+                  <Col sm={12}>
                     <Content/>
                   </Col>
                 </Row>
               </Col>
           </Row> 
+
         </InstantSearch>
 
       </Grid>
-
 
     );
   }

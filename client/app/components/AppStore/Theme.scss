@@ -3,6 +3,11 @@
   flex-direction: column;
 }
 
+:global(.row.display-flex) {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 :global(.ais-SearchBox__root) {
 	max-width: none !important;
 }
@@ -48,7 +53,3 @@
 	}
 }
 
-:global(.row.display-flex) {
-  display: flex;
-  flex-wrap: wrap;
-}
