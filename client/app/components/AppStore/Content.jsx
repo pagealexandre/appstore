@@ -7,7 +7,6 @@ import {
   Stats,
   SortBy,
   Hits,
-  Highlight,
 } from 'react-instantsearch/dom';
 
 import styles from '../../assets/styles/components/Content.scss';
@@ -47,6 +46,9 @@ const Content = (props) => (
  </div>
  );
 
+Content.propTypes = {
+  env: React.PropTypes.string
+};
  
 export default Content; 
 

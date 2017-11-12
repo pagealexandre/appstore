@@ -13,7 +13,6 @@ import {
   SearchBox,
   RefinementList,
   Panel,
-  Configure,
 } from 'react-instantsearch/dom';
 
 export default class AppStore extends React.Component {

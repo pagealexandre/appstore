@@ -19,5 +19,9 @@ const Sidebar = (props) => (
 	</Col>
 );
 
+Sidebar.propTypes = {  
+	title: React.PropTypes.string.isRequired,
+};
+
 export default Sidebar;
 

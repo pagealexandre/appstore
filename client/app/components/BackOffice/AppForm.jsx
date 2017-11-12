@@ -29,7 +29,6 @@ export default class AppForm extends React.Component {
         link: false,
         image: false,
        },
-
        errorMessage: {
         appName: "Name's length must be inferior to 36 characters",
         rating: "Rating must be bewteen 0 and 5",
@@ -38,7 +37,6 @@ export default class AppForm extends React.Component {
         selectedGenres: 'You must at least select one object',
         image: 'You must provide a valid url containing an image',
        }
-
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
