@@ -1,4 +1,4 @@
-# AppStore bootstrapped app
+# AppStore app
 
 ![screenshot1](https://github.com/pagealexandre/appstore/blob/master/img/Screen%20Shot%202017-11-12%20at%2019.33.50.png)
 
@@ -6,15 +6,25 @@ All the tasks asked in [this](https://gist.github.com/Jerskouille/553717eb770be0
 
 # How to test it ?
 
-`bundle install`
+You might want to use a docker container as I change the DB from Sqlite to Postresql
+
+I use the gem figaro
+
+`touch config/application.yml` and set the following variables :
+
+| Env variables  |
+| ------------- |
+| db_user  |
+| db_password  |
+| algolia_app_id |
+| algolia_api_key |
+| search_only_api_key |
 
 `npm install`
 
+`bundle install`
+
 `be = bundle exec`
-
-`touch config/application.yml` and put `db_user:myUserName` and `db_password:myPassword`
-
-(You might want to use a docker container as I change the DB from Sqlite to Postresql)
 
 `be rake db:create`
 
@@ -23,4 +33,3 @@ All the tasks asked in [this](https://gist.github.com/Jerskouille/553717eb770be0
 `be rake db:seed`
 
 `foreman start -f Procfile.hot`
-
