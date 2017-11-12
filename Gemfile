@@ -30,6 +30,12 @@ end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'factory_bot'
+  gem 'rspec-rails', '~> 3.6'
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'faker'
+  gem 'json_spec'
 end
 
 group :development do

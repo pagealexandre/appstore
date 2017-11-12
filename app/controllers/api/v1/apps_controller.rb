@@ -3,6 +3,8 @@ class Api::V1::AppsController < ApplicationController
 
 	def create
 		@app = App.create(app_params)
+		puts app_params.inspect
+		puts @app.inspect
 		render json: @app
 	end
 

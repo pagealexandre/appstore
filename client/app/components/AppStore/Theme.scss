@@ -1,9 +1,11 @@
 :global(.row.display-flex > [class*='col-']) {
+  display: -webkit-flex;
   display: flex;
   flex-direction: column;
 }
 
 :global(.row.display-flex) {
+  display: -webkit-flex;
   display: flex;
   flex-wrap: wrap;
 }
