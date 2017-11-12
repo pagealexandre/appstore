@@ -33,3 +33,11 @@ I use the gem figaro
 `foreman start -f Procfile.hot`
 
 All the tasks asked in [this assessment](https://gist.github.com/Jerskouille/553717eb770be0a2665be8b8a20ed6e7) has been implemented
+
+# Tests
+
+I use FactoryGirl, Faker and Rspec
+
+`be rspec spec/`
+
+
