@@ -6,15 +6,17 @@ All the tasks asked in [this](https://gist.github.com/Jerskouille/553717eb770be0
 
 # How to test it ?
 
-`bundle install`
-
 `npm install`
 
+`touch config/application.yml` and put `db_user:myUserName` and `db_password:myPassword` `search_only_api_key:{key}` and
+
+`algolia_api_key:{key}` and `algolia_app_id:{id}`
+
+You might want to use a docker container as I change the DB from Sqlite to Postresql
+
+`bundle install`
+
 `be = bundle exec`
-
-`touch config/application.yml` and put `db_user:myUserName` and `db_password:myPassword`
-
-(You might want to use a docker container as I change the DB from Sqlite to Postresql)
 
 `be rake db:create`
 
