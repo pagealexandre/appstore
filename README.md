@@ -1,4 +1,4 @@
-# AppStore app
+# AppStore
 
 ![screenshot1](https://github.com/pagealexandre/appstore/blob/master/img/Screen%20Shot%202017-11-12%20at%2019.33.50.png)
 
