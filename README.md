@@ -50,4 +50,4 @@ All the tasks asked in [this assessment](https://gist.github.com/Jerskouille/553
 
 `DELETE /api/1/apps/:id` => Delete an app from the DB.
 
-
+The name of the index is `App_rubyEnv` e.g `App_development`. The indice in your algolia dashboard should be `App*`.
