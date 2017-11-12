@@ -12,7 +12,9 @@ All the tasks asked in [this](https://gist.github.com/Jerskouille/553717eb770be0
 
 `be = bundle exec`
 
-`touch config/application.yml` and put `db_user:{myUserName}` and `db_password:{myPassword}`
+`touch config/application.yml` and put `db_user:myUserName` and `db_password:myPassword`
+
+- (You might want to use a docker container as I change the DB from Sqlite to Postresql)
 
 `be rake db:create`
 
@@ -22,4 +24,4 @@ All the tasks asked in [this](https://gist.github.com/Jerskouille/553717eb770be0
 
 `foreman start -f Procfile.hot`
 
-- (You might want to use a docker container as I change the DB from Sqlite to Postresql)
+
