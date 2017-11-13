@@ -48,6 +48,6 @@ All the tasks asked in [this assessment](https://gist.github.com/Jerskouille/553
 
 `PUT /api/v1/apps/:id` => Update an app (as a JSON object) to the DB;
 
-`DELETE /api/1/apps/:id` => Delete an app from the DB.
+`DELETE /api/v1/apps/:id` => Delete an app from the DB.
 
 The name of the index is `App_rubyEnv` e.g `App_development`. The indice in your algolia dashboard should be `App*`.
