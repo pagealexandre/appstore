@@ -3,7 +3,7 @@
 	border: 1px solid red;
 }
 
-grey {
+.grey {
 	background-color: #f9f9fb;
 }
 
@@ -16,38 +16,22 @@ grey {
 	float: right;
 }
 
-:global(.checkbox-group) {
+.checkBoxGroup {
+	margin-left: 25%;
 
 	label {
 		display: block;
 	}
 
-	margin-left: 25%;	
-
-	:global(.checkbox-group) {
-		display: block;
-	}
-
-	:global(.form-label) {
-		float: none;
-	}
-
-	:global(.form-checkbox) {
+	input {
 		float: left;
 	}
 }
 
-:global(.form-checkbox-label) {
-
-	:global(#title) {
-		float: left;
-	}
+.title {
+	float: left;
 }
 
-:global(.form-group) {
-
-	:global(.form-label) {
-		display: block;
-	}
-	
+.formLabel {
+	display: block;
 }

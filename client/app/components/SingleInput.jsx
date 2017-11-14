@@ -1,8 +1,9 @@
 import React from 'react';
+import styles from '../assets/styles/components/AppForm.scss';
 
 const SingleInput = (props) => (  
   <div className="form-group">
-    <label className="form-label">{props.title}</label>
+    <label className={styles.formLabel}>{props.title}</label>
     <input
       onBlur={props.onBlurFunc}
       className="form-input"

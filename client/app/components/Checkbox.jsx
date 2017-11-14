@@ -1,12 +1,13 @@
 import React from 'react';
+import styles from '../assets/styles/components/AppForm.scss';
 
 const Checkbox = (props) => (  
-  <div className="form-checkbox-label">
-    <label id="title">{props.title}</label>
-    <div className={"checkbox-group"}>
+  <div>
+    <label className={styles.title}>{props.title}</label>
+    <div className={styles.checkBoxGroup}>
       {props.options.map(opt => {
         return (
-          <label key={opt} className="form-label capitalize">
+          <label key={opt} className="capitalize">
             <input
               className="form-checkbox"
               name={props.setName}
